@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${APP_POSTGRES_HOST:localhost}:${APP_POSTGRES_PORT:5432}/shop_demo
-    username: ${APP_POSTGRES_USERNAME:shop}
-    password: ${APP_POSTGRES_PASSWORD:shop}
+    url: jdbc:postgresql://localhost:15432/shop_demo
+    username: shop
+    password: shop
   redis:
-    host: ${APP_REDIS_HOST:localhost}
-    port: ${APP_REDIS_PORT:6379}
+    host: localhost
+    port: 16379
   flyway:
     enabled: true
 

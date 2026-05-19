@@ -104,10 +104,10 @@ To są dane, które:
 
 ## 7. Uruchomienie Dockera
 
-Domyślnie aplikacja używa portów:
+Projekt jest ustawiony na stałe na porty:
 
-- PostgreSQL: `5432`
-- Redis: `6379`
+- PostgreSQL: `15432`
+- Redis: `16379`
 
 Uruchomienie:
 
@@ -121,29 +121,7 @@ Zatrzymanie:
 docker compose down
 ```
 
-Jeżeli porty `5432` albo `6379` są zajęte lokalnie, można użyć override:
-
-```bash
-POSTGRES_HOST_PORT=15432 REDIS_HOST_PORT=16379 docker compose up -d
-```
-
-Wtedy aplikację uruchamia się z:
-
-```bash
-APP_POSTGRES_PORT=15432 APP_REDIS_PORT=16379 ./gradlew bootRun --args="--app.mode=demo"
-```
-
-PowerShell:
-
-```powershell
-$env:POSTGRES_HOST_PORT='15432'
-$env:REDIS_HOST_PORT='16379'
-docker compose up -d
-
-$env:APP_POSTGRES_PORT='15432'
-$env:APP_REDIS_PORT='16379'
-.\gradlew.bat bootRun --args="--app.mode=demo"
-```
+Nie trzeba ustawiać dodatkowych zmiennych środowiskowych.
 
 ## 8. Uruchomienie aplikacji
 
