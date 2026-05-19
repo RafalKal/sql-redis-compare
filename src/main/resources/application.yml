@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${APP_POSTGRES_HOST:localhost}:${APP_POSTGRES_PORT:5432}/shop_demo
+    username: ${APP_POSTGRES_USERNAME:shop}
+    password: ${APP_POSTGRES_PASSWORD:shop}
+  redis:
+    host: ${APP_REDIS_HOST:localhost}
+    port: ${APP_REDIS_PORT:6379}
+  flyway:
+    enabled: true
+
+app:
+  mode: demo
+
+benchmark:
+  iterations: 10000
+  warmupIterations: 1000
+  resultFile: build/reports/benchmark-results.csv
