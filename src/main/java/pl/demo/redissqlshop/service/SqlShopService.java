@@ -190,7 +190,8 @@ public class SqlShopService {
             return statement;
         }, orderKeyHolder);
 
-        Number orderNumber = orderKeyHolder.getKey();
+        Map<String, Object> generatedKeys = orderKeyHolder.getKeys();
+        Number orderNumber = generatedKeys == null ? orderKeyHolder.getKey() : (Number) generatedKeys.get("id");
         if (orderNumber == null) {
             throw new IllegalStateException("Nie udało się utworzyć zamówienia.");
         }
